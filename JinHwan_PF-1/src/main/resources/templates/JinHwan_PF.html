@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JinHwan Kim</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">   
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+
+<style>
+    
+    @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+    @font-face {
+         font-family: 'NIXGONM-Vb';
+         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+    }
+    
+/*    font = 'Spoqa Han Sans', 'NIXGONM-Vb', 'Spoqa Han Sans JP', 'Sans-serif'   */
+    
+    * { }
+    
+    * {
+        box-sizing: border-box;
+        border-collapse: collapse;
+        text-decoration: none;
+    }
+
+    /* 스크롤 없애기 */
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 네비 */
+    .navi {
+        width: 100%;
+        height: 60px;
+        z-index: 100;
+        background-color: #17BDF9;
+        position: fixed;
+    }
+    #navi_div, #profile, #project, #contact {
+        width: 1365px;
+        height: 100%;
+        margin: auto;
+    }
+    #navi_logo {
+        display: inline-block;
+        float: left;
+        width: 83px;
+        height: 100%;
+        text-align: center;
+        margin-right: 652px;
+    }
+    #navi_img {
+        width: 100px;
+        height: 40px;
+        position: relative;
+        top: 18%;
+        cursor: pointer;
+    }
+    #navi_list {
+        display: inline-block;
+        float: left;
+        width: 630px;
+        height: 100%;
+    }
+    #navi_profile, #navi_project, #navi_contact {
+        display: inline-block;
+        float: left;
+        width: 200px;
+        height: 95%;
+        margin-right: 10px;
+        text-align: center;
+        cursor: pointer;     
+    }
+    #text_navi_profile, #text_navi_project, #text_navi_contact{
+        font-family: 'Spoqa Han Sans'; font-weight: bolder; font-style: normal; color: #E8F9CC;
+        font-size: 30px;
+        position: relative;
+        top: 22%;
+    }
+    #text_navi_profile:hover, #text_navi_project:hover, #text_navi_contact:hover{
+        color:#4a4a4a;
+    }
+    
+    #text_section_profile, #text_section_project, #text_section_contact{
+        float: left;
+        width: auto;
+        height: 100%;
+        font-size: 70px;
+        font-family: 'Spoqa Han Sans'; font-weight: bolder; font-style: normal; color: #4a4a4a;
+    }
+    
+    
+    /* 팝업 */
+    .popup{
+        margin-left: 1350px;
+        margin-top: 820px;
+        width: 550px;
+        height: 100px;
+        z-index: 100;
+        background-color: #17BDF9;
+        border-radius: 20px;
+        position: fixed;
+    }
+    #popup_div{
+        width: 90%;
+        margin: auto;
+        margin-top: 15px;
+        font-family: 'NIXGONM-Vb';
+        font-size: 15px;
+    }
+    #popup_div > p{
+        line-height: 18px;
+    }
+    .c_box{
+        margin-top: 8px;
+    }
+    #cb1{
+        display: none;
+    }
+    input[id="cb1"] + label {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #E8F9CC;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    input[id="cb1"]:checked + label {
+        background-color: #E8F9CC;
+    }
+    #check_text{
+        color: #E8F0CC;
+    }
+    #c_btn{
+        float: right;
+        font-size: 15px;
+        border: none;
+        background-color: #17BDF9;
+        color: #E8F9CC;
+        font-weight: 100;
+        text-transform: uppercase;
+        cursor: pointer;
+        
+    }
+    
+
+    
+    /* 헤더 */
+    .header {
+        width: 100%;
+        height: 969px;
+        background-image: url("https://tistory2.daumcdn.net/tistory/4690055/skin/images/main.png")
+    }
+    /* 타이핑 효과 */
+    .wrapper {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: -150px;
+    }
+    .typing-demo {
+      width: 26ch;
+      height: 200px;
+      animation: typing 3s steps(40), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      font-family: Spoqa Han Sans;
+      font-size: 100px;
+      font-weight: bold;
+      color: #E8F9CC;
+      text-shadow: 2px 6px 2px gray;
+    }
+    #typing-pf{
+        font-size: 160px;
+    }
+    @keyframes typing {
+      from {
+        width: 0
+      }
+    }
+    @keyframes blink {
+      50% {
+        border-color: transparent
+      }
+    }
+    /* 마우스 스크롤 */
+    #mouse_scroll{
+        width: 80px;
+        height: 100px;
+        margin-left: 50%;
+        display: inline-block;
+    }
+    #scroll_text{
+        margin-top: 7px;
+        color:#17BDF9;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    #circle--shape{
+        animation: animateShape 1.3s ease-in-out 1000;
+    }
+    #scroll{
+        animation: animateHeight 1.3s linear 0.4s 1000;
+    }
+    @keyframes animateShape{
+        50%{
+            cy:100;
+            opacity: .1;
+        }
+    }
+    @keyframes animateHeight{
+        50%{
+            height: 100px;
+        }
+    }
+    
+    
+    /* 프로필*/
+    .profile_section{
+        width: 100%;
+        height: 969px;
+        background-color: #FCFFF5;
+    }
+    #profile_title{
+        width: 100%;
+        height: 60px;
+        margin-top: 100px;
+        display: inline-block;
+    }
+    #profile_body{
+        width: 100%;
+        height: 600px;
+        margin-top: 140px;
+        font-family: 'NIXGONM-Vb';
+    }
+    #profile_img{
+        width: 350px;
+        height: 350px;
+        float: left;
+        border: 1px solid;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    #profile_img img{
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    #profile_education{
+        width: 400px;
+        height: 240px;
+        float: left;
+        margin-left: 110px;
+    }
+    #text_education_title{
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Spoqa Han Sans';
+        color: #4a4a4a;
+    }
+    #text_education_body{
+        font-size: 20px;
+    }
+    #profile_skill{
+        width: 500px;
+        height: 500px;
+        float: right;
+    }
+    #text_skill_title{
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Spoqa Han Sans';
+        color: #4a4a4a;
+    }
+    #text_skill_body{
+        font-size: 20px;
+    }
+    #skill{
+        margin-top: 20px;
+    }
+    #skill > dt{
+		text-transform:uppercase;
+        margin-top: 17px;
+	}
+	#skill > dd{
+		background:#4a4a4a;
+		position:relative;height:20px;
+	}
+	#skill .bar{
+		background:#E8F9CC;
+		height:14px;
+		position:absolute;left:0px;top:3px;
+		z-index:100;
+	}
+	.bar01{width:1%;}
+	.bar02{width:1%;}
+	.bar03{width:1%;}
+    .bar04{width:1%;}
+    .bar05{width:1%;}
+    .bar06{width:1%;}
+    .bar07{width:1%;}
+    .bar08{width:1%;}
+	span.txt01{
+		position:absolute;
+		right:5px;top:5px;
+		color:#E8F9CC;z-index:2000;
+        font-size:12px;
+    }
+    #profile_certificate{
+        width: 400px;
+        height: 240px;
+        float: left;
+        margin-left: 110px;
+        margin-top: 60px;
+        margin-bottom: -160px;
+    }
+    #text_certificate_title{
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Spoqa Han Sans';
+        color: #4a4a4a;
+    }
+    #text_certificate_body{
+        font-size: 20px;
+    }
+    #profile_info{
+        width: 350px;
+        height: 130px;
+        float: left;
+    }
+    #profile_info_content{
+        width: 300px;
+        height: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    #profile_info_body{
+        font-size: 20px;
+        width: auto;
+        height: auto;
+        line-height:30px;
+    }
+
+
+
+    /* 프로젝트 */
+    .project_section {
+        width: 100%;
+        height: 969px;
+    }
+    #project_title{
+        width: 100%;
+        height: 60px;
+        margin-top: 100px;
+        display: inline-block;
+    }
+    #project_body{
+        margin-top: 100px;
+        width: auto;
+        height: 600px;
+    }
+    #project_one{
+        float: left;
+        width: 400px;
+        height: 100%;
+        background-image: url("https://tistory3.daumcdn.net/tistory/4690055/skin/images/hiworld.png");
+        margin-right: 80px;
+        border-radius: 55px;
+        background-size: 100% 100%;
+    }
+    #project_one_contact{
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        border-radius: 50px;
+        background-image: url("https://tistory2.daumcdn.net/tistory/4690055/skin/images/main.png");
+        max-width: 100%;
+        display: block;
+    }
+    #project_one_text{
+        width: 286px;
+        height: 90%;
+        margin-left: 45px;
+        margin-top: 40px;
+        display: inline-block;
+    }
+    #project_one_title{
+        width: 100%;
+        height: 30px;
+        font-family: 'NIXGONM-Vb';
+        font-size: 25px;
+        color: #E8F9CC;
+    }
+    #project_one_body{
+        margin-top: 250px;
+        font-family: 'NIXGONM-Vb';
+        color: #E8F9CC;
+    }
+    #project_one_body > h4{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    #project_one_body > ul{
+        margin-top: 30px;
+        width: 100%;
+        height: 100%;
+        line-height: 25px;
+    }
+    #project_one_body > ul > li{
+        display: inline-block;
+        list-style: none;
+    }
+    #project_one_body > ul > li:last-child{
+        padding-left: 20px;
+    }
+    #project_one_button{
+        margin-top: 20px;
+        width: 100%;
+        height: 56px;
+        border: 3px solid #E8F9CC;
+        padding-top: 15px;
+        text-align: center;
+        color: #E8F9CC;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    
+    #project_two{
+        float: left;
+        width: 400px;
+        height: 100%;
+        background-image: url("https://tistory3.daumcdn.net/tistory/4690055/skin/images/eatit.png");
+        margin-right: 80px;
+        border-radius: 55px;
+        background-size: 100% 100%;
+    }
+    #project_two_contact{
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        border-radius: 50px;
+        background-image: url("https://tistory2.daumcdn.net/tistory/4690055/skin/images/main.png");
+        max-width: 100%;
+        display: block;
+    }
+    #project_two_text{
+        width: 286px;
+        height: 90%;
+        margin-left: 45px;
+        margin-top: 40px;
+        display: inline-block;
+    }
+    #project_two_title{
+        width: 100%;
+        height: 30px;
+        font-family: 'NIXGONM-Vb';
+        font-size: 25px;
+        color: #E8F9CC;
+    }
+    #project_two_body{
+        margin-top: 250px;
+        font-family: 'NIXGONM-Vb';
+        color: #E8F9CC;
+    }
+    #project_two_body > h4{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    #project_two_body > ul{
+        margin-top: 30px;
+        width: 100%;
+        height: 100%;
+        line-height: 25px;
+    }
+    #project_two_body > ul > li{
+        display: inline-block;
+        list-style: none;
+    }
+    #project_two_body > ul > li:last-child{
+        padding-left: 20px;
+    }
+    #project_two_button{
+        margin-top: 20px;
+        width: 100%;
+        height: 56px;
+        border: 3px solid #E8F9CC;
+        padding-top: 15px;
+        text-align: center;
+        color: #E8F9CC;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #project_three{
+        float: left;
+        width: 400px;
+        height: 100%;
+        background-image: url("https://tistory3.daumcdn.net/tistory/4690055/skin/images/simsim.png");
+        border-radius: 55px;
+        background-size: 100% 100%;
+    }
+    #project_three_contact{
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        border-radius: 50px;
+        background-image: url("https://tistory2.daumcdn.net/tistory/4690055/skin/images/main.png");
+        max-width: 100%;
+        display: block;
+    }
+    #project_three_text{
+        width: 286px;
+        height: 90%;
+        margin-left: 45px;
+        margin-top: 40px;
+        display: inline-block;
+    }
+    #project_three_title{
+        width: 100%;
+        height: 30px;
+        font-family: 'NIXGONM-Vb';
+        font-size: 25px;
+        color: #E8F9CC;
+    }
+    #project_three_body{
+        margin-top: 250px;
+        font-family: 'NIXGONM-Vb';
+        color: #E8F9CC;
+    }
+    #project_three_body > h4{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    #project_three_body > ul{
+        margin-top: 30px;
+        width: 100%;
+        height: 100%;
+        line-height: 25px;
+    }
+    #project_three_body > ul > li{
+        display: inline-block;
+        list-style: none;
+    }
+    #project_three_body > ul > li:last-child{
+        padding-left: 20px;
+    }
+    #project_three_button{
+        margin-top: 20px;
+        width: 100%;
+        height: 56px;
+        border: 3px solid #E8F9CC;
+        padding-top: 15px;
+        text-align: center;
+        color: #E8F9CC;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    
+    /* 질문사항 */
+    .contact_section{
+        width: 100%;
+        height: 969px;
+        background-color: #FCFFF5;
+    }
+    #contact_title{
+        width: 100%;
+        height: 60px;
+        margin-top: 100px;
+        display: inline-block;
+    }
+    #contact_body{
+        margin-top: 200px;
+        text-align: center;
+    }
+    #text_contact_thank{
+        font-family: 'Spoqa Han Sans';
+        font-size: 160px;
+        font-weight: bold;
+        color: #4a4a4a;
+    }
+    #contact_list{
+        margin-top: 160px;
+        text-align: center;
+    }
+    #contact_list img{
+        margin-bottom: -5px;
+        width: 30px;
+        height: 30px;
+    }
+    #text_contact_email, #text_contact_phone, #text_contact_kakao{
+        font-family: 'NIXGONM-Vb';
+        font-size: 30px;
+        padding-right: 30px;
+    }
+    #contact_copyright{
+        height: 50px;
+        margin-top: 207px;
+        background-color: #dfe0dc;
+        text-align: center;
+        padding-top: 16px;
+    }
+    #text_contact_copyright{
+        font-family: 'NIXGONM-Vb';
+        font-size: 20px;
+        color: #4a4a4a;
+    }
+
+</style>
+
+<!-- 메인 바디 부분!!!  -->
+<body>
+    
+    <script> 
+            AOS.init(); 
+    </script>
+   
+   
+    <nav class="navi">
+        <div id="navi_div">
+            <div id="navi_logo">
+                <img id="navi_img" src="https://tistory3.daumcdn.net/tistory/4690055/skin/images/logo.png" alt="" onclick="navi_img()">
+            </div>
+            <div id="navi_list">
+                <div id="navi_profile" onclick="navi_profile()"><text id="text_navi_profile">Profile</text></div>
+                <div id="navi_project" onclick="navi_project()"><text id="text_navi_project">Project</text></div>
+                <div id="navi_contact" onclick="navi_contact()"><text id="text_navi_contact">Contact</text></div>
+            </div>
+        </div>
+    </nav>
+    
+   
+    <div data-aos="fade-up" class="popup"  data-aos-duration="1000">
+            <div id="popup_div">
+            <p>본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어 졌습니다.</p>
+            <p>일부 저작물의 저작권은 원저작권자에게 있습니다.</p>
+            <p>Chrome에 최적화 되어있습니다.</p>
+            <p class="c_box">
+                <input type="checkbox" id="cb1">
+                <label for="cb1"></label>
+                <span id="check_text">오늘 하루 띄우지 않음</span>
+                <input type="button" value="Close" id="c_btn">
+            </p>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div data-aos="zoom-in" data-aos-duration="1500">
+            <!-- 타이핑 효과 -->
+            <div class="wrapper">
+                <div class="typing-demo">
+                    Welcome To My <span id="typing-pf">PortFolio</span>
+                </div>
+            </div>
+            <!-- 마우스 효과 -->
+            <div id="mouse_scroll">
+               <div class="center">
+                 <svg width="40" height="90" viewBox="0 0 50 130">
+                   <rect id="scroll" x="0" y="5" rx="25" ry="25" width="50" height="120" stroke="#17BDF9" fill="#e2f7ce" stroke-width="4"></rect>
+                   <circle id="circle--shape" cx="25" cy="32" r="8" fill="#17BDF9"></circle>
+                 </svg>
+               </div>
+               <div id="scroll_text">Scroll</div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="profile_section">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <div id="profile">
+                <div id="profile_title"><text id="text_section_profile">Profile</text></div>
+                    <div id="profile_body">
+                    <div id="profile_img"><img src="https://tistory4.daumcdn.net/tistory/4690055/skin/images/1.jpg" alt=""></div>
+                    <div id="profile_education">
+                        <text id="text_education_title">EDUCATION</text>
+                        <text id="text_education_body"> <br><br>
+                            2020.10.22 ~ 2021.04.14 <br>
+                            자바 응용 소프트웨어 개발자 (KG아이티뱅크) <br><br>
+                            2020.09.14 ~ 2020.10.15 <br>
+                            자바 언어 기초 (KG아이티뱅크)<br><br>
+                            2018.10 ~ 2021.04 <br>
+                            컴퓨터공학 학사학위(학점은행제)
+                        </text>
+                    </div>
+                    <div id="profile_skill">
+                        <text id="text_skill_title">Skill</text>
+                        <text id="text_skill_body">
+                            <dl id="skill">
+                                <dt>JAVA</dt>
+                                <dd><div class="bar bar01"></div><span class="txt01">40%</span></dd>
+                                <dt>HTML/CSS</dt>
+                                <dd><div class="bar bar02"></div><span class="txt01">20%</span></dd>
+                                <dt>JavaScript/JQuery</dt>
+                                <dd><div class="bar bar03"></div><span class="txt01">20%</span></dd>
+                                <dt>Spring</dt>
+                                <dd><div class="bar bar04"></div><span class="txt01">30%</span></dd>
+                                <dt>DATABASE</dt>
+                                <dd><div class="bar bar05"></div><span class="txt01">35%</span></dd>
+                                <dt>AWS/LINUX</dt>
+                                <dd><div class="bar bar06"></div><span class="txt01">35%</span></dd>
+                                <dt>Git</dt>
+                                <dd><div class="bar bar07"></div><span class="txt01">30%</span></dd>
+                                <dt>Server</dt>
+                                <dd><div class="bar bar08"></div><span class="txt01">25%</span></dd>
+                            </dl>
+                        </text>
+                    </div>
+                    <div id="profile_certificate">
+                        <text id="text_certificate_title">CERTIFICATE</text>
+                        <text id="text_certificate_body"><br><br>
+                            2021.03.22 정보처리기사 (*필기합격) <br><br>
+                            2020.10.08 네트워크 관리사 2급 <br><br>
+                            2020.09.26 소방 안전 관리자 1급 <br><br>
+                            2019.02.14 운전면혀증 1종 대형
+                        </text>
+                    </div>
+                    <div id="profile_info">
+                        <div id="profile_info_content">
+                            <div id="profile_info_body">
+                                    김진환 <br>
+                                    1997.09.17 <br>
+                                    010-2830-8290
+                                    <a href="https://github.com/stux12">github.com/stux12</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project_section">
+       <div data-aos="fade-up" data-aos-duration="1500">
+            <div id="project">
+                <div id="project_title"><text id="text_section_project">Project</text></div>
+                <div id="project_body">
+                    <div id="project_one">
+                        <div id="project_one_contact">
+                            <div id="project_one_text">
+                                <div id="project_one_title">Project</div>
+                                <div id="project_one_body">
+                                    <h4>Hi - World</h4>
+                                    <ul>
+                                        <li>사용기술 <br> 개발기간 <br> 참여인원</li>
+                                        <li>SPRING/JQUERY/JAVA <br> 2021.03.12 ~ 2021.04.13 <br> 6명</li>
+                                    </ul>
+                                </div>
+                                <div id="project_one_button">
+                                    Git SITE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="project_two">
+                    <div id="project_two_contact">
+                            <div id="project_two_text">
+                                <div id="project_two_title">Project</div>
+                                <div id="project_two_body">
+                                    <h4>EAT - IT</h4>
+                                    <ul>
+                                        <li>사용기술 <br> 개발기간 <br> 참여인원</li>
+                                        <li>SERVLET/JQUERY/JAVA <br> 2021.02.04 ~ 2021.02.22 <br> 6명</li>
+                                    </ul>
+                                </div>
+                                <div id="project_two_button">
+                                    Git SITE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="project_three">
+                    <div id="project_three_contact">
+                            <div id="project_three_text">
+                                <div id="project_three_title">Project</div>
+                                <div id="project_three_body">
+                                    <h4>심심해닷컴</h4>
+                                    <ul>
+                                        <li>사용기술 <br> 개발기간 <br> 참여인원</li>
+                                        <li>WINDOWBUILDER/JAVA <br> 2020.11.23 ~ 2020.12.02 <br> 4명</li>
+                                    </ul>
+                                </div>
+                                <div id="project_three_button">
+                                    Git SITE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact_section">
+        <div data-aos="fade-up" data-aos-duration="1500">
+            <div id="contact">
+                <div id="contact_title"><text id="text_section_contact">Contact</text></div>
+                <div id="contact_body">
+                    <text id="text_contact_thank">Thank You</text>
+                </div>
+                <div id="contact_list">
+                    <text id="text_contact_email">
+                        <img src="https://tistory3.daumcdn.net/tistory/4690055/skin/images/email.png" alt=" "> stux12@naver.com
+                    </text>
+                    <text id="text_contact_phone">
+                        <img src="https://tistory3.daumcdn.net/tistory/4690055/skin/images/phone.png" alt=" "> 010-2830-8290
+                    </text>
+                    <text id="text_contact_kakao">
+                        <img src="https://tistory3.daumcdn.net/tistory/4690055/skin/images/talk.png" alt=" "> kakao ID : stux2
+                    </text>
+                </div>
+            </div>
+            <div id="contact_copyright">
+                <text id="text_contact_copyright">
+                    Copyright&copy; 2021 JinHwanKim Portfolio. All Rights Reserved.
+                </text>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+
+<script>
+      
+    // 스크롤
+    $('html, body').on('mousewheel', function(e) {
+        var wheel = e.originalEvent.wheelDelta;
+        let position = $(window).scrollTop();
+        
+        if (wheel > 0) {
+            if(position<=2907&&position>1938){
+                position = 2907;
+            }else if(position<=1938&&position>969){
+                position = 1938;
+            }else if(position<=969&&position>0){
+                position = 969;
+            }else if(position==0){
+                position = 0;
+            }
+            position -= 969;
+            window.scrollTo({top:position, behavior:'smooth'});
+        }else{
+            if(position>=0&&position<969){
+                position = 0;
+            }else if(position>=969&&position<1938){
+                position = 969;
+            }else if(position>=1938&&position<2907){
+                position = 1938;
+            }else if(position==2907){
+                position = 2907;
+            }
+            position += 969;
+            window.scrollTo({top:position, behavior:'smooth'});
+        }
+        
+//        console.log(position);
+        if(position==0){
+            skillBarClear();
+            naviColorClear();
+        }else if(position==969){
+            skillBar();
+            naviColorClear();
+            naviColor('#text_navi_profile');
+        }else if(position==1938){
+            skillBarClear();
+            naviColorClear();
+            naviColor('#text_navi_project');
+        }else if(position==2907){
+            skillBarClear();
+            naviColorClear();
+            naviColor('#text_navi_contact');
+        }
+        
+    })
+    
+    // 네비 버튼
+    function navi_img(){
+        window.scrollTo({top:0, behavior:'smooth'});
+        skillBarClear();
+        naviColorClear();
+    }
+    
+    function navi_profile(){
+        window.scrollTo({top:969, behavior:'smooth'});
+        skillBar();
+        naviColorClear();
+        naviColor('#text_navi_profile');
+    }
+    
+    function navi_project(){
+        window.scrollTo({top:1938, behavior:'smooth'});
+        skillBarClear();
+        naviColorClear();
+        naviColor('#text_navi_project');
+    }
+    
+    function navi_contact(){
+        window.scrollTo({top:2907, behavior:'smooth'});
+        skillBarClear();
+        naviColorClear();
+        naviColor('#text_navi_contact');
+    }
+    
+    function skillBar(){
+        $('#skill .bar01').delay(1500).animate({'width':'40%'},1000,'linear');
+        $('#skill .bar02').delay(1500).animate({'width':'20%'},1000,'linear');
+        $('#skill .bar03').delay(1500).animate({'width':'20%'},1000,'linear');
+        $('#skill .bar04').delay(1500).animate({'width':'30%'},1000,'linear');
+        $('#skill .bar05').delay(1500).animate({'width':'35%'},1000,'linear');
+        $('#skill .bar06').delay(1500).animate({'width':'35%'},1000,'linear');
+        $('#skill .bar07').delay(1500).animate({'width':'30%'},1000,'linear');
+        $('#skill .bar08').delay(1500).animate({'width':'25%'},1000,'linear');
+    }
+    function skillBarClear(){
+        $('#skill .bar01').css('width','1%');
+        $('#skill .bar02').css('width','1%');
+        $('#skill .bar03').css('width','1%');
+        $('#skill .bar04').css('width','1%');
+        $('#skill .bar05').css('width','1%');
+        $('#skill .bar06').css('width','1%');
+        $('#skill .bar07').css('width','1%');
+        $('#skill .bar08').css('width','1%');
+    }
+    
+    function naviColorClear(){
+        $('#text_navi_profile').css('color','#E8F9CC');
+        $('#text_navi_project').css('color','#E8F9CC');
+        $('#text_navi_contact').css('color','#E8F9CC');
+    }
+    
+    function naviColor(data){
+        $(data).css('color','#4a4a4a');
+    }
+    
+    $('#c_btn').on("click", function(state){
+        if($('#cb1').is(":checked") == true){
+            if($.cookie('popupCookie') == undefined){
+                $.cookie('popupCookie','Y',{expires:1, path: '/'})
+                $('.popup').css("display","none");
+            }
+        }else{
+            $('.popup').css("display","none");
+        }
+        
+    })
+    
+    $(document).ready(function(){
+        if($.cookie('popupCookie') == 'Y'){
+            $('.popup').css("display","none");
+            $('#project_one_contact').fadeOut();
+            $('#project_two_contact').fadeOut();
+            $('#project_three_contact').fadeOut();
+        }
+    })
+    
+    // 호버시 백그라운드
+    $('#project_one').hover(function(){
+        $('#project_one_contact').fadeIn(200);
+    },function(){
+        $('#project_one_contact').fadeOut(200);
+    })
+    $('#project_two').hover(function(){
+        $('#project_two_contact').fadeIn(200);
+    },function(){
+        $('#project_two_contact').fadeOut(200);
+    })
+    $('#project_three').hover(function(){
+        $('#project_three_contact').fadeIn(200);
+    },function(){
+        $('#project_three_contact').fadeOut(200);
+    })
+    // 호버시 버튼
+    $('#project_one_button').hover(function(){
+        $('#project_one_button').css("backgroundColor","#E8F9CC");
+        $('#project_one_button').css("color","#17BDF9");
+    },function(){
+        $('#project_one_button').css("backgroundColor","");
+        $('#project_one_button').css("color","#E8F9CC");
+    })
+    $('#project_two_button').hover(function(){
+        $('#project_two_button').css("backgroundColor","#E8F9CC");
+        $('#project_two_button').css("color","#17BDF9");
+    },function(){
+        $('#project_two_button').css("backgroundColor","");
+        $('#project_two_button').css("color","#E8F9CC");
+    })
+    $('#project_three_button').hover(function(){
+        $('#project_three_button').css("backgroundColor","#E8F9CC");
+        $('#project_three_button').css("color","#17BDF9");
+    },function(){
+        $('#project_three_button').css("backgroundColor","");
+        $('#project_three_button').css("color","#E8F9CC");
+    })
+    
+    // 버튼 클릭시
+    $('#project_one_button').on("click",function(){
+        window.open('https://github.com/stux12/LastProject_HiWorld/tree/master','_blank');
+    })
+    $('#project_two_button').on("click",function(){
+        window.open('https://github.com/stux12/Semi-Project_Eat-it','_blank');
+    })
+    $('#project_three_button').on("click",function(){
+        window.open('https://github.com/stux12/first_project','_blank');
+    })
+    
+</script>
+
+</html>
